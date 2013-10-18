@@ -12,9 +12,9 @@ There are two main tools in iRaccoonShow:
 
 ## Warning
 
-Just in case you wonder and before further reading: I cannot code. My background isn’t technical and I have never learnt programming. Sorry, but I must confess it’s too complex for a simple mind like mine :smirk:.
+Just in case you wonder and before further reading: I cannot code. My background isn’t technical and I have never learnt programming. Sorry, but I must confess it’s too complex for a simple mind such as mine :smirk:.
 
-What I have done here is could be considered trial--and--error writing. It works for me, but it is full of glitches. I’m aware of the limits of iRacconShow, but I cannot overcome them.
+What I have done here is could be considered trial–and–error writing. It works for me, but it is full of glitches. I’m aware of the limits of iRacconShow, but I cannot overcome them.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ iRaccoonShow has the following dependencies:
 * GStreamer, PyGST: audio recording.
 * SWFTools: generation of Flash files.
 
-It is mainly a command--line software. In `recslides`, command--line is only used to invoke the tool (after that is pure image).
+It is mainly a command–line software. In `recslides`, command–line is only used to invoke the tool (after that is pure image).
 
 And this only works on Linux. Not saying that it cannot be ported to other platforms, but this is something still to be done.
 
