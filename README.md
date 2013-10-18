@@ -32,12 +32,23 @@ And this only works on Linux. Not saying that it cannot be ported to other platf
 
 ## How It Works
 
+`ìraccoonshow` should be cleared before it can be released to the public ([read the issue](https://github.com/ousia/iRaccoonShow/issues/1)).
+
+`recslides` is invoked by the command--line (`recslides mypresentation.pdf`). 
+
+1. A new window is opened, displaying the first page from the presentation.
+
+1. When the space bar is pressed for the first time, presentation goes to full screen and sound from microphone starts to be recorded into a sound file.
+
+1. Each time the space bar is pressed, presentation advances to next slide and the transition time is recorded to a text file.
+
+1. When the last slide is reached and the space bar is pressed, presentation leaves full screen and audio recording is stopped.
 
 ## Help Wanted
 
 Copy and paste is the wrong technique to write anything. This also applies to code writing.
 
-Even before I can start sharing code, I already have issues. If you are interested, any help is welcome.
+Even before I can start sharing code, I already have [issues](https://github.com/ousia/iRaccoonShow/issues). If you are interested, any help is highly appreciated.
 
 ## Compatibility
 
