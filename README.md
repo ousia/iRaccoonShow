@@ -86,7 +86,15 @@ I think there are two main areas in with compatibility issues might arise: iRacc
 
 I’m only an average user that uses Linux at home and Windows at work. Altough I know how to use a computer (more than particular programs), I’m more proficient in Linux than in Windows. I know that MacOSX is a Unix version, but I don’t have any access to a Mac computer. I don’t think that tablets, phones and such (running iOS or Android) are computers in the proper sense of the term.
 
+One of the main features with iRaccoonShow is the dependency on well established libraries in the Linux ecosystem. This makes portability of the software itself more difficult. As far as I know, it could be possible for Windows, but harder for MacOSX.
+
+
+
+
+
 Being a command-line program, SWFTools is developed for both Windonws and Linux. I think there is at least one Mac port, but installing it requires to install additional software.
+
+Poppler is a PDF rendering library developed for Linux systems. It
 
 ### Flash
 
