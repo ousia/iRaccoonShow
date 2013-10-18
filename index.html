@@ -52,7 +52,7 @@
 
 <p>But even if the slide could be included only once for its full display time, its image would have a given resolution. Image size in video cannot increased without decreasing its definition. Maybe a higher resolution could be set in some cases, but the resulting file would be higher.</p>
 
-<p>iRaccoonShow includes each image only once in the presentation and preserving each resolution–independent image as such.</p>
+<p>iRaccoonShow includes each image only once in the presentation, preserving each resolution–independent image as such.</p>
 
 <h2>
 <a name="tools" class="anchor" href="#tools"><span class="octicon octicon-link"></span></a>Tools</h2>
@@ -60,8 +60,8 @@
 <p>There are two main tools in iRaccoonShow:</p>
 
 <ul>
-<li><p><code>iraccoonshow</code> generates the final Flash presentation and loader from the PDF file, the sound recording and the time transitions.</p></li>
 <li><p><code>recslides</code> records the sound to a file and writes the slide transitions to a text file, while displaying the slides at full screen.</p></li>
+<li><p><code>iraccoonshow</code> generates the final Flash presentation and loader from the PDF file, the sound recording and the time transitions.</p></li>
 </ul><h2>
 <a name="warning" class="anchor" href="#warning"><span class="octicon octicon-link"></span></a>Warning</h2>
 
@@ -80,7 +80,7 @@
 <li>Poppler: PDF display.</li>
 <li>GStreamer, PyGST: audio recording.</li>
 <li>SWFTools: generation of Flash files.</li>
-</ul><p>It is mainly a command–line software. In <code>recslides</code>, command–line is only used to invoke the tool (after that,  it’s a pure GUI program).</p>
+</ul><p>iRaccoonShow is mainly a command–line software. In <code>recslides</code>, command–line is only used to invoke the tool (after that, there is no command–line <img class="emoji" title=":wink:" alt=":wink:" src="https://github.global.ssl.fastly.net/images/icons/emoji/wink.png" height="20" width="20" align="absmiddle">).</p>
 
 <p>It only works on Linux. I’m not saying that it cannot be ported to other platforms: this is something still to be done.</p>
 
@@ -96,14 +96,14 @@
 <ol>
 <li><p>It’s invoked in the command–line with something like <code>recslides mypresentation.pdf</code>.</p></li>
 <li><p>A new window is opened, displaying the first slide from presentation.</p></li>
-<li><p>When the space bar is pressed for the first time, presentation goes to full screen and sound from microphone starts to be recorded into a sound file.</p></li>
+<li><p>When the space bar is pressed for the first time, presentation goes to full screen and sound from microphone starts to be recorded in a sound file.</p></li>
 <li><p>Each time the space bar is pressed, presentation advances to next slide and the transition time is recorded to a text file.</p></li>
 <li><p>When the last slide is reached and the space bar is pressed, presentation leaves full screen and audio recording is stopped.</p></li>
 </ol><p>With <code>recslides</code>, you obtain both the recorded sound and transition times from each slide in presentation. This means you have two key features:</p>
 
 <ul>
 <li><p>Having the transition times and sound, you can generate the final presentation in the format you like (being Flash only one of the possible ones [more on this]).</p></li>
-<li><p>This is the best (or the only possible) way to get accurate transition times. Times are recorded when giving the presentation (not necessarily in public), not recreated by calculating how long each slide took.</p></li>
+<li><p>This is the best (or maybe the only possible) way to get accurate transition times. Times are recorded when giving the presentation (not necessarily in public), not recreated by calculating how long each slide took.</p></li>
 </ul><h3>
 <a name="%C3%ACraccoonshow" class="anchor" href="#%C3%ACraccoonshow"><span class="octicon octicon-link"></span></a><code>ìraccoonshow</code>
 </h3>
@@ -111,25 +111,28 @@
 <p><code>ìraccoonshow</code> should be cleared before it can be released to the public (<a href="https://github.com/ousia/iRaccoonShow/issues/1">read the issue</a>).</p>
 
 <h2>
-<a name="help-wanted" class="anchor" href="#help-wanted"><span class="octicon octicon-link"></span></a>Help Wanted</h2>
+<a name="help-wanted-apply-within" class="anchor" href="#help-wanted-apply-within"><span class="octicon octicon-link"></span></a>Help Wanted. Apply Within</h2>
 
-<p>Copy and paste is the wrong technique to write anything. This also applies to code writing.</p>
+<p>Copy and paste is the wrong technique to write anything meaningful. This also applies to code writing.</p>
 
 <p>Even before I can start sharing code, I already have <a href="https://github.com/ousia/iRaccoonShow/issues">issues</a>. If you are interested, any help is highly appreciated.</p>
 
-<p>Unless I have assigned an issue to myself, you are welcome to take</p>
+<p>Unless I have assigned an issue to myself (and we can even discuss that in the issue itself), you are welcome to take any issue and solve it.</p>
 
 <h2>
 <a name="compatibility-issues" class="anchor" href="#compatibility-issues"><span class="octicon octicon-link"></span></a>Compatibility issues</h2>
 
-<h3>
-<a name="iraccoonshow-1" class="anchor" href="#iraccoonshow-1"><span class="octicon octicon-link"></span></a><code>iraccoonshow</code>
-</h3>
-
-<p>Although Python the other</p>
+<p>I think there are two main areas in with compatibility issues might arise: iRaccoonShow as the tool and Flash as the output format.</p>
 
 <h3>
-<a name="output" class="anchor" href="#output"><span class="octicon octicon-link"></span></a>Output</h3>
+<a name="iraccoonshow-1" class="anchor" href="#iraccoonshow-1"><span class="octicon octicon-link"></span></a>iRaccoonShow</h3>
+
+<p>I’m only an average user that uses Linux at home and Windows at work. Altough I know how to use a computer (more than particular programs), I’m more proficient in Linux than in Windows. I know that MacOSX is a Unix version, but I don’t have any access to a Mac computer. I don’t think that tablets, phones and such (running iOS or Android) are computers in the proper sense of the term.</p>
+
+<p>Being a command-line program, SWFTools is developed for both Windonws and Linux. I think there is at least one Mac port, but installing it requires to install additional software.</p>
+
+<h3>
+<a name="flash" class="anchor" href="#flash"><span class="octicon octicon-link"></span></a>Flash</h3>
 
 <p>Flash</p>
 
