@@ -34,7 +34,74 @@
           <h1>
 <a name="iraccoonshow" class="anchor" href="#iraccoonshow"><span class="octicon octicon-link"></span></a>iRaccoonShow</h1>
 
-<p>coming soon in a computer near you...</p>
+<p>iRaccoonShow enables the creation of presentations that include slides with synchronized sound. Of course, a screencasting facility can be used to record video, but these output files won’t match the much smaller file sizes and the much higher image quality achieved with iRaccoonShow.</p>
+
+<p>One presentation (re)created with iRaccoonShow is <a href="http://www.free-culture.tk">http://www.free-culture.tk</a>.</p>
+
+<p>There are two main tools in iRaccoonShow:</p>
+
+<ul>
+<li><p><code>iraccoonshow</code> generates the final Flash presentation and loader from the PDF file, the sound recording and the time transitions.</p></li>
+<li><p><code>recslides</code> records the sound to a file and writes the slide transitions to a text file, while displaying the slides at full screen.</p></li>
+</ul><h2>
+<a name="warning" class="anchor" href="#warning"><span class="octicon octicon-link"></span></a>Warning</h2>
+
+<p>Just in case you wonder and before further reading: I cannot code. My background isn’t technical and I have never learnt programming. Sorry, but I must confess it’s too complex for a simple mind such as mine <img class="emoji" title=":smirk:" alt=":smirk:" src="https://github.global.ssl.fastly.net/images/icons/emoji/smirk.png" height="20" width="20" align="absmiddle">.</p>
+
+<p>What I have done here is could be considered trial–and–error writing. It works for me, but it is full of glitches. I’m aware of the limits of iRacconShow, but I cannot overcome them.</p>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>iRaccoonShow has the following dependencies:</p>
+
+<ul>
+<li>Python: was the original script language of RaccoonShow, from what everything evolved.</li>
+<li>PyGTK, PyGlade: GUI.</li>
+<li>Poppler: PDF display.</li>
+<li>GStreamer, PyGST: audio recording.</li>
+<li>SWFTools: generation of Flash files.</li>
+</ul><p>It is mainly a command–line software. In <code>recslides</code>, command–line is only used to invoke the tool (after that is pure image).</p>
+
+<p>And this only works on Linux. Not saying that it cannot be ported to other platforms, but this is something still to be done.</p>
+
+<h2>
+<a name="how-it-works" class="anchor" href="#how-it-works"><span class="octicon octicon-link"></span></a>How It Works</h2>
+
+<h2>
+<a name="help-wanted" class="anchor" href="#help-wanted"><span class="octicon octicon-link"></span></a>Help Wanted</h2>
+
+<p>Copy and paste is the wrong technique to write anything. This also applies to code writing.</p>
+
+<p>Even before I can start sharing code, I already have issues. If you are interested, any help is welcome.</p>
+
+<h2>
+<a name="compatibility" class="anchor" href="#compatibility"><span class="octicon octicon-link"></span></a>Compatibility</h2>
+
+<p>the other </p>
+
+<p>Flash</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>All code published within this repository is released to the public under the GNU General Public License version 3 or any later version.</p>
+
+<p>The code comes with no warranty. Use at your own risk.</p>
+
+<h2>
+<a name="acknowledgments" class="anchor" href="#acknowledgments"><span class="octicon octicon-link"></span></a>Acknowledgments</h2>
+
+<p>Well, I gratefully acknowledge that I stand on the shoulders of many giants:</p>
+
+<ul>
+<li><p>Lawrence Lessig gave the original talk at the O’Reilly Open Source Conference in 2002.</p></li>
+<li><p>Leonard Lin created the first Flash presentation and posted it <a href="http://randomfoo.net/oscon/2002/lessig/">online</a>. (Originally released under a Creative Commons Attribution-ShareAlike license.)</p></li>
+<li><p>Matthias Kramm develops <a href="http://swftools.org/">SWFTools</a>, a GNU GPL software that makes all the Flash generation.</p></li>
+<li><p>Jono Bacon developed <a href="http://www.jonobacon.org/files/raccoonshow-0.6.tgz">RaccoonShow</a>, the first tool that enabled the recreation from a Flash file  from PDF slides and recorded video. (Released under the GNU GPLv2 license. Abandoned project.)</p></li>
+<li><p>Sergio Costas developed <a href="http://www.rastersoft.com/programas/supershow.html">SuperShow</a>, which allows the user to recreate a presentation from a video file and the slides in PDF format. (Released under the GNU GPLv3 license. Abandoned project.)</p></li>
+<li><p>I recreated the original presentation and posted it <a href="http://www.free-culture.tk">online</a>. Thanks to the improvements to SWFTools by Matthias Kramm, the original file was decreased in a 27% smaller size. I couldn’t have done that without the help of Matthias Kramm, Sergio Costas, Chris Pugh, Ricardo Pedroso and Huub Schaeks.</p></li>
+</ul>
         </section>
 
         <footer>
