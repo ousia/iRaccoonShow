@@ -6,13 +6,13 @@ Of course, your favourite screencast software can be used to record a presentati
 
 * File size: each slide image is include only once in the final presetation.
 
-* Image quality: vector images allow higher resolutions without higher file size.
+* Image quality: vector images allow higher resolutions without higher file sizes.
 
-Digital video requires to include the same image many times per second (the more images included in a video, the larger file size it results). This is a huge waste of bits. And even if the number of images per second is decreased, audio can slightly loose sync with images.
+Digital video requires to include the same image many times per second. This is a huge waste of unrequired size. And when the number of images per second is decreased, audio can loose sync with images.
 
-But even if the slide could be included only once for its full display, its image will have a given resolution. Image size in video cannot increased without decreasing its definition. Maybe a higher resolution could be set in some cases, but the resulting file would be higher.
+But even if the slide could be included only once for its full display time, its image would have a given resolution. Image size in video cannot increased without decreasing its definition. Maybe a higher resolution could be set in some cases, but the resulting file would be higher.
 
-iRaccoonShow includes each image only once in the presentation and preserving each resolution--independent image as such.
+iRaccoonShow includes each image only once in the presentation and preserving each resolution–independent image as such.
 
 ## Tools
 
@@ -48,7 +48,7 @@ It only works on Linux. I’m not saying that it cannot be ported to other platf
 
 `recslides` records the sound from the microphone and registers each slide transition timing.
 
-1. It’s invoked in the command--line with something like `recslides mypresentation.pdf`.
+1. It’s invoked in the command–line with something like `recslides mypresentation.pdf`.
 
 1. A new window is opened, displaying the first slide from presentation.
 
