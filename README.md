@@ -28,17 +28,21 @@ Just in case you wonder and before further reading: I cannot code. My background
 
 What I have done here is could be considered trial–and–error writing. It works for me, but it is full of glitches. I’m aware of the limits of iRacconShow, but I cannot overcome them.
 
+<!--- ## Motivation
+
+I -->
+
 ## Requirements
 
 iRaccoonShow has the following dependencies:
 
-* Python: was the original script language of RaccoonShow, from what everything evolved.
-* PyGTK, PyGlade: GUI.
+* Python: was the original script language of RaccoonShow, from what iraccoonshow evolved.
+* GTK, PyGTK: minimal GUI.
 * Poppler: PDF display.
 * GStreamer, PyGST: audio recording.
 * SWFTools: generation of Flash files.
 
-iRaccoonShow is mainly a command–line software. In `recslides`, command–line is only used to invoke the tool (after that, there is no command–line :wink:).
+iRaccoonShow is a command–line software. In `recslides`, command–line is only used to invoke the tool (after that, there is no command–line :wink:).
 
 It only works on Linux. I’m not saying that it cannot be ported to other platforms: this is something still to be done.
 
@@ -52,11 +56,11 @@ It only works on Linux. I’m not saying that it cannot be ported to other platf
 
 1. A new window is opened, displaying the first slide from presentation.
 
-1. When the space bar is pressed for the first time, presentation goes to full screen and sound from microphone starts to be recorded in a sound file.
+1. When the mouse is single-clicked for the first time , presentation goes to full screen and sound from microphone starts to be recorded in a sound file (something like `mypresentation-audio.wav`).
 
-1. Each time the space bar is pressed, presentation advances to next slide and the transition time is recorded to a text file.
+1. Each time the mouse is clicked, presentation advances to next slide and the transition time is recorded to a text file (named such as `mypresentation-times.txt`).
 
-1. When the last slide is reached and the space bar is pressed, presentation leaves full screen and audio recording is stopped.
+1. When the last slide is reached and the mouse is clicked, presentation leaves full screen and audio recording is stopped. It takes 2.5 seconds extra to avoid problems with the Flash generation.
 
 With `recslides`, you obtain both the recorded sound and transition times from each slide in presentation. This means you have two key features:
 
@@ -70,9 +74,9 @@ With `recslides`, you obtain both the recorded sound and transition times from e
 
 `ìraccoonshow` should be cleared before it can be released to the public ([read the issue](https://github.com/ousia/iRaccoonShow/issues/1)).
 
-## Help Wanted. Apply Within
+## Bugs
 
-Copy and paste is the wrong technique to write anything meaningful. This also applies to code writing.
+Of course, this simple piece of software has bugs.
 
 Even before I can start sharing code, I already have [issues](https://github.com/ousia/iRaccoonShow/issues). If you are interested, any help is highly appreciated.
 
