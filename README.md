@@ -64,7 +64,7 @@ It only works on Linux. I’m not saying that it cannot be ported to other platf
 
 With `recslides`, you obtain both the recorded sound and transition times from each slide in presentation. This means you have two key features:
 
-* Having the transition times and sound, you can generate the final presentation in the format you like (being Flash only one of the possible ones [more on this]).
+* Having the transition times and sound, you can generate the final presentation in the format you like (being Flash only one of the possible ones [more on this](#flash)).
 
 * This is the best (or maybe the only possible) way to get accurate transition times. Times are recorded when giving the presentation (not necessarily in public), not recreated by calculating how long each slide took.
 
@@ -76,11 +76,9 @@ With `recslides`, you obtain both the recorded sound and transition times from e
 
 ## Bugs
 
-Of course, this simple piece of software has bugs.
+Of course, this simple piece of software has bugs. I cannot code, so you can [report issues](https://github.com/ousia/iRaccoonShow/issues). But if you can contribute code, issues will be fixed earlier.
 
-Even before I can start sharing code, I already have [issues](https://github.com/ousia/iRaccoonShow/issues). If you are interested, any help is highly appreciated.
-
-Unless I have assigned an issue to myself (and we can even discuss that in the issue itself), you are welcome to take any issue and solve it.
+Any help is appreciated.
 
 ## Compatibility issues
 
@@ -88,17 +86,33 @@ I think there are two main areas in with compatibility issues might arise: iRacc
 
 ### iRaccoonShow
 
-I’m only an average user that uses Linux at home and Windows at work. Altough I know how to use a computer (more than particular programs), I’m more proficient in Linux than in Windows. I know that MacOSX is a Unix version, but I don’t have any access to a Mac computer. I don’t think that tablets, phones and such (running iOS or Android) are computers in the proper sense of the term.
+Porting iRaccoonShow to Windows and MacOSX isn’t impossible, but it’s surely beyond my knowledge.
+
+My guess is that it may be easier to write these tools with native libraries for those platforms. At least, the libraries for PDF display and audio recording. But it is only a(n educated?) guess.
+
+SWFTools works out–of–the box in Windows. And it may be installed in MacOSX (using [MacPorts](https://www.macports.org/install.php) or even [Homebrew](http://brew.sh/) [the latter seems harder to install]).
+
+I run Linux on my machine. So, even if I had something designed for Windows or MacOSX, I wouldn’t be able to check it on these platforms.
+
+<!--- I’m only an average user that uses Linux at home and Windows at work. Altough I know how to use a computer (more than particular programs), I’m more proficient in Linux than in Windows. I know that MacOSX is a Unix version, but I don’t have any access to a Mac computer. I don’t think that tablets, phones and such (running iOS or Android) are computers in the proper sense of the term.
 
 One of the main features with iRaccoonShow is the dependency on well established libraries in the Linux/Unix ecosystem. This makes portability of the software itself more difficult. As far as I know, it could be possible for Windows, but harder for MacOSX.
 
 Since the principles of iRaccoonShow are very basic, it might be much easier to find the right libraries to the specific platform and start developing from the start.
 
-But there is one
+But there is one -->
 
 ### Flash
 
-Flash
+Flash is available for Windows, MacOSX and Linux. iPad isn’t supported, since Apple doesn’t want to have it supported.
+
+Linux has a Flash player, but its development has stopped in version 11.2 ([security fixes will be added for five years after this release](http://www.adobe.com/devnet/flashplatform/whitepapers/roadmap.html)).
+
+Since Flash is a dead project in Linux, there are two other possibilities:
+
+* Generate a movie with variable frame–rate. Image quality with the [VP9 codec](http://www.vp9videocodec.com) seems to be the best available. And audio can be much compressed with a higher quality using the [Opus codec](http://www.opus-codec.org/).
+
+* PDF could be the a good format for vector–based presentations. It only requires some multimedia JavaScript and a PDF reader implemented by Adobe.
 
 ## License
 
