@@ -105,7 +105,7 @@
 </ol><p>With <code>recslides</code>, you obtain both the recorded sound and transition times from each slide in presentation. This means you have two key features:</p>
 
 <ul>
-<li><p>Having the transition times and sound, you can generate the final presentation in the format you like (being Flash only one of the possible ones [more on this]).</p></li>
+<li><p>Having the transition times and sound, you can generate the final presentation in the format you like (being Flash only one of the possible ones <a href="#flash">more on this</a>).</p></li>
 <li><p>This is the best (or maybe the only possible) way to get accurate transition times. Times are recorded when giving the presentation (not necessarily in public), not recreated by calculating how long each slide took.</p></li>
 </ul><h3>
 <a name="%C3%ACraccoonshow" class="anchor" href="#%C3%ACraccoonshow"><span class="octicon octicon-link"></span></a><code>ìraccoonshow</code>
@@ -116,11 +116,9 @@
 <h2>
 <a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h2>
 
-<p>Of course, this simple piece of software has bugs.</p>
+<p>Of course, this simple piece of software has bugs. I cannot code, so you can <a href="https://github.com/ousia/iRaccoonShow/issues">report issues</a>. But if you can contribute code, issues will be fixed earlier.</p>
 
-<p>Even before I can start sharing code, I already have <a href="https://github.com/ousia/iRaccoonShow/issues">issues</a>. If you are interested, any help is highly appreciated.</p>
-
-<p>Unless I have assigned an issue to myself (and we can even discuss that in the issue itself), you are welcome to take any issue and solve it.</p>
+<p>Any help is appreciated.</p>
 
 <h2>
 <a name="compatibility-issues" class="anchor" href="#compatibility-issues"><span class="octicon octicon-link"></span></a>Compatibility issues</h2>
@@ -130,20 +128,29 @@
 <h3>
 <a name="iraccoonshow-1" class="anchor" href="#iraccoonshow-1"><span class="octicon octicon-link"></span></a>iRaccoonShow</h3>
 
-<p>I’m only an average user that uses Linux at home and Windows at work. Altough I know how to use a computer (more than particular programs), I’m more proficient in Linux than in Windows. I know that MacOSX is a Unix version, but I don’t have any access to a Mac computer. I don’t think that tablets, phones and such (running iOS or Android) are computers in the proper sense of the term.</p>
+<p>Porting iRaccoonShow to Windows and MacOSX isn’t impossible, but it’s surely beyond my knowledge.</p>
 
-<p>One of the main features with iRaccoonShow is the dependency on well established libraries in the Linux/Unix ecosystem. This makes portability of the software itself more difficult. As far as I know, it could be possible for Windows, but harder for MacOSX.</p>
+<p>My guess is that it may be easier to write these tools with native libraries for those platforms. At least, the libraries for PDF display and audio recording. But it is only a(n educated?) guess.</p>
 
-<p>Since the principles of iRaccoonShow are very basic, it might be much easier to find the right libraries to the specific platform and start developing from the start.</p>
+<p>SWFTools works out–of–the box in Windows. And it may be installed in MacOSX (using <a href="https://www.macports.org/install.php">MacPorts</a> or even <a href="http://brew.sh/">Homebrew</a> [the latter seems harder to install]).</p>
 
-<p>But there is one</p>
+<p>I run Linux on my machine. So, even if I had something designed for Windows or MacOSX, I wouldn’t be able to check it on these platforms.</p>
+
+
 
 <h3>
 <a name="flash" class="anchor" href="#flash"><span class="octicon octicon-link"></span></a>Flash</h3>
 
-<p>Flash</p>
+<p>Flash is available for Windows, MacOSX and Linux. iPad isn’t supported, since Apple doesn’t want to have it supported.</p>
 
-<h2>
+<p>Linux has a Flash player, but its development has stopped in version 11.2 (<a href="http://www.adobe.com/devnet/flashplatform/whitepapers/roadmap.html">security fixes will be added for five years after this release</a>).</p>
+
+<p>Since Flash is a dead project in Linux, there are two other possibilities:</p>
+
+<ul>
+<li><p>Generate a movie with variable frame–rate. Image quality with the <a href="http://www.vp9videocodec.com">VP9 codec</a> seems to be the best available. And audio can be much compressed with a higher quality using the <a href="http://www.opus-codec.org/">Opus codec</a>.</p></li>
+<li><p>PDF could be the a good format for vector–based presentations. It only requires some multimedia JavaScript and a PDF reader implemented by Adobe.</p></li>
+</ul><h2>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>All code published within this repository is released to the public under the GNU General Public License version 3 or any later version.</p>
