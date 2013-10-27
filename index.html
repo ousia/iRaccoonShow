@@ -4,29 +4,40 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>iRaccoonShow by ousia</title>
-
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
   <body>
-    <div class="wrapper">
+
       <header>
         <h1>iRaccoonShow</h1>
         <p>a tool to improve your presentations</p>
-
-        <p class="view"><a href="https://github.com/ousia/iRaccoonShow">View the Project on GitHub <small>ousia/iRaccoonShow</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/ousia/iRaccoonShow/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/ousia/iRaccoonShow/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/ousia/iRaccoonShow">View On <strong>GitHub</strong></a></li>
-        </ul>
       </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/ousia/iRaccoonShow" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/ousia/iRaccoonShow/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/ousia/iRaccoonShow/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
       <section>
         <h1>
 <a name="iraccoonshow" class="anchor" href="#iraccoonshow"><span class="octicon octicon-link"></span></a>iRaccoonShow</h1>
@@ -59,18 +70,20 @@
 
 <p>What I have done here is could be considered trial–and–error writing. It works for me, but it is full of glitches. I’m aware of the limits of iRacconShow, but I cannot overcome them.</p>
 
+
+
 <h2>
 <a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <p>iRaccoonShow has the following dependencies:</p>
 
 <ul>
-<li>Python: was the original script language of RaccoonShow, from what everything evolved.</li>
-<li>PyGTK, PyGlade: GUI.</li>
+<li>Python: was the original script language of RaccoonShow, from what iraccoonshow evolved.</li>
+<li>GTK, PyGTK: minimal GUI.</li>
 <li>Poppler: PDF display.</li>
 <li>GStreamer, PyGST: audio recording.</li>
 <li>SWFTools: generation of Flash files.</li>
-</ul><p>iRaccoonShow is mainly a command–line software. In <code>recslides</code>, command–line is only used to invoke the tool (after that, there is no command–line <img class="emoji" title=":wink:" alt=":wink:" src="https://github.global.ssl.fastly.net/images/icons/emoji/wink.png" height="20" width="20" align="absmiddle">).</p>
+</ul><p>iRaccoonShow is a command–line software. In <code>recslides</code>, command–line is only used to invoke the tool (after that, there is no command–line <img class="emoji" title=":wink:" alt=":wink:" src="https://github.global.ssl.fastly.net/images/icons/emoji/wink.png" height="20" width="20" align="absmiddle">).</p>
 
 <p>It only works on Linux. I’m not saying that it cannot be ported to other platforms: this is something still to be done.</p>
 
@@ -86,9 +99,9 @@
 <ol>
 <li><p>It’s invoked in the command–line with something like <code>recslides mypresentation.pdf</code>.</p></li>
 <li><p>A new window is opened, displaying the first slide from presentation.</p></li>
-<li><p>When the space bar is pressed for the first time, presentation goes to full screen and sound from microphone starts to be recorded in a sound file.</p></li>
-<li><p>Each time the space bar is pressed, presentation advances to next slide and the transition time is recorded to a text file.</p></li>
-<li><p>When the last slide is reached and the space bar is pressed, presentation leaves full screen and audio recording is stopped.</p></li>
+<li><p>When the mouse is single-clicked for the first time , presentation goes to full screen and sound from microphone starts to be recorded in a sound file (something like <code>mypresentation-audio.wav</code>).</p></li>
+<li><p>Each time the mouse is clicked, presentation advances to next slide and the transition time is recorded to a text file (named such as <code>mypresentation-times.txt</code>).</p></li>
+<li><p>When the last slide is reached and the mouse is clicked, presentation leaves full screen and audio recording is stopped. It takes 2.5 seconds extra to avoid problems with the Flash generation.</p></li>
 </ol><p>With <code>recslides</code>, you obtain both the recorded sound and transition times from each slide in presentation. This means you have two key features:</p>
 
 <ul>
@@ -101,9 +114,9 @@
 <p><code>ìraccoonshow</code> should be cleared before it can be released to the public (<a href="https://github.com/ousia/iRaccoonShow/issues/1">read the issue</a>).</p>
 
 <h2>
-<a name="help-wanted-apply-within" class="anchor" href="#help-wanted-apply-within"><span class="octicon octicon-link"></span></a>Help Wanted. Apply Within</h2>
+<a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h2>
 
-<p>Copy and paste is the wrong technique to write anything meaningful. This also applies to code writing.</p>
+<p>Of course, this simple piece of software has bugs.</p>
 
 <p>Even before I can start sharing code, I already have <a href="https://github.com/ousia/iRaccoonShow/issues">issues</a>. If you are interested, any help is highly appreciated.</p>
 
@@ -119,7 +132,11 @@
 
 <p>I’m only an average user that uses Linux at home and Windows at work. Altough I know how to use a computer (more than particular programs), I’m more proficient in Linux than in Windows. I know that MacOSX is a Unix version, but I don’t have any access to a Mac computer. I don’t think that tablets, phones and such (running iOS or Android) are computers in the proper sense of the term.</p>
 
-<p>Being a command-line program, SWFTools is developed for both Windonws and Linux. I think there is at least one Mac port, but installing it requires to install additional software.</p>
+<p>One of the main features with iRaccoonShow is the dependency on well established libraries in the Linux/Unix ecosystem. This makes portability of the software itself more difficult. As far as I know, it could be possible for Windows, but harder for MacOSX.</p>
+
+<p>Since the principles of iRaccoonShow are very basic, it might be much easier to find the right libraries to the specific platform and start developing from the start.</p>
+
+<p>But there is one</p>
 
 <h3>
 <a name="flash" class="anchor" href="#flash"><span class="octicon octicon-link"></span></a>Flash</h3>
@@ -148,11 +165,11 @@
 </ul>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/ousia">ousia</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p>Project maintained by <a href="https://github.com/ousia">ousia</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
