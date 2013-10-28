@@ -26,7 +26,7 @@ There are two main tools in iRaccoonShow:
 
 Just in case you wonder and before further reading: I cannot code. My background isn’t technical and I have never learned programming. Sorry, but I must confess it’s too complex for a simple mind such as mine :smirk:.
 
-What I have done here is could be considered trial–and–error writing. It works for me, but it is full of glitches. I’m aware of the limits of iRacconShow, but I cannot overcome them.
+What I have done here could be considered trial–and–error writing. It works for me, but it is full of glitches. I’m aware of the limits of iRacconShow, but I cannot overcome them.
 
 <!--- ## Motivation
 
@@ -86,21 +86,13 @@ I think there are two main areas in with compatibility issues might arise: iRacc
 
 ### iRaccoonShow
 
-Porting iRaccoonShow to Windows and MacOSX isn’t impossible, but it’s surely beyond my knowledge.
+Porting iRaccoonShow to Windows and MacOSX isn’t impossible, but this is beyond my technical skills.
 
-My guess is that it may be easier to write these tools with native libraries for those platforms. At least, the libraries for PDF display and audio recording. But it is only a(n educated?) guess.
+My guess is that it may be easier to write these tools with native libraries for those platforms. At least, the libraries for PDF display and audio recording. But this is only a(n educated?) guess.
 
 SWFTools works out–of–the box in Windows. And it may be installed in MacOSX (using [MacPorts](https://www.macports.org/install.php) or even [Homebrew](http://brew.sh/) [the latter seems harder to install]).
 
 I run Linux on my machine. So, even if I had something designed for Windows or MacOSX, I wouldn’t be able to check it on these platforms.
-
-<!--- I’m only an average user that uses Linux at home and Windows at work. Altough I know how to use a computer (more than particular programs), I’m more proficient in Linux than in Windows. I know that MacOSX is a Unix version, but I don’t have any access to a Mac computer. I don’t think that tablets, phones and such (running iOS or Android) are computers in the proper sense of the term.
-
-One of the main features with iRaccoonShow is the dependency on well established libraries in the Linux/Unix ecosystem. This makes portability of the software itself more difficult. As far as I know, it could be possible for Windows, but harder for MacOSX.
-
-Since the principles of iRaccoonShow are very basic, it might be much easier to find the right libraries to the specific platform and start developing from the start.
-
-But there is one -->
 
 ### Flash
 
@@ -112,7 +104,7 @@ Since Flash is a dead project in Linux, there are two other possibilities:
 
 * Generate a movie with variable frame–rate. Image quality with the [VP9 codec](http://www.vp9videocodec.com) seems to be the best available. And audio can be much compressed with a higher quality using the [Opus codec](http://www.opus-codec.org/).
 
-* PDF could be the a good format for vector–based presentations. It only requires some multimedia JavaScript and a PDF reader implemented by Adobe.
+* PDF can be a good format for vector–based presentations. It only requires some multimedia JavaScript and a PDF reader implemented by Adobe.
 
 ## License
 
