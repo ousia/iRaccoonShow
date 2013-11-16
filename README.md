@@ -98,13 +98,13 @@ Of course, this simple piece of software has bugs. I cannot code, so you can [re
 
 Any help is appreciated.
 
-`swfc` has a bug with latest `lame` version. Until this is fixed in SWFTools, the workaround is to provide the .MP3 file to `iraccoonshow`. One needs to invoke `lame` directly such as in:
+`swfc` has a bug with latest `lame` version. Until this is fixed in SWFTools, the workaround is to provide the .mp3 file to `iraccoonshow`. One needs to invoke `lame` directly such as in:
 
     lame -s 16 -m m -b 32 mypresentation-audio.wav mypresentation-audio.mp3
 
 <!-- If you know what you are doing, one could even set `-s 8`. But here you are on your own. -->
 
-## Compatibility issues
+## Compatibility Issues
 
 I think there are two main areas in with compatibility issues might arise: iRaccoonShow as the tool and Flash as the output format.
 
