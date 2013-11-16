@@ -30,13 +30,27 @@ import pygst
 pygst.require("0.10")
 import gst
 
-
 class rec_presentation:
     def __init__(self):
 
         uri = gnomevfs.make_uri_from_shell_arg(sys.argv[1])
 
         self.filename = os.path.splitext(sys.argv[1])[0]
+        
+        self.audiofilename = self.filename + "-audio.wav"
+        self.timesfilename = self.filename + '-times.txt'
+
+        if (os.path.exists(self.audiofilename) or os.path.exists(self.timesfilename)) == True:
+            print("\nWARNING: there are preexisting files from a previous recording.")
+            print("Filenames are: " + self.audiofilename + ", " + self.timesfilename + ".")
+            print("If recslides continues, files will be overwritten.")
+            continue_or_delete = raw_input("Do you want to continue? (y/n): ")
+            if continue_or_delete == ("y" or "y"):
+                print("Continuing to sound and times recording.\n")
+                pass
+            else:
+                print("recslides will exit now.\n")
+                sys.exit()
 
         self.document = poppler.document_new_from_file (uri, None)
         self.n_pages = self.document.get_n_pages()
@@ -84,7 +98,7 @@ class rec_presentation:
         self.encoder = gst.element_factory_make("wavenc", "wavenc")
 
         self.fileout = gst.element_factory_make("filesink", "sink")
-        self.fileout.set_property("location", self.filename + "-audio.wav")
+        self.fileout.set_property("location", self.audiofilename )
 
         self.player.add(self.source, self.encoder, self.fileout)
         gst.element_link_many(self.source, self.encoder, self.fileout)
@@ -97,8 +111,6 @@ class rec_presentation:
         self.playing = False
 
         self.recording_time = self.player.get_last_stream_time()
-
-        self.file_times = open(self.filename + '-times.txt', 'w')
         #~ self.file_times.write("supershow" + "\n")
 
         self.win.show_all()
@@ -135,6 +147,7 @@ class rec_presentation:
                 self.start = []
                 self.start.append(starting)
                 self.player.set_state(gst.STATE_PLAYING)
+                self.file_times = open(self.timesfilename, 'w')
             elif self.playing == True:
                 if self.current_page + 1 < self.n_pages:
                     self.starting_time = self.start[0]
