@@ -33,23 +33,34 @@ import gst
 class rec_presentation:
     def __init__(self):
 
-        uri = gnomevfs.make_uri_from_shell_arg(sys.argv[1])
-
         self.filename = os.path.splitext(sys.argv[1])[0]
+
+        if os.path.splitext(sys.argv[1])[1] != (".pdf" or ".PDF"):
+            self.pdffilename = os.path.splitext(sys.argv[1])[0] + ".pdf"
+            if  os.path.exists(self.pdffilename) == False:
+                self.pdffilename = os.path.splitext(sys.argv[1])[0] + ".PDF"
+            elif os.path.exists(self.pdffilename) == False:
+                print "\n  recslides requires a PDF document to work with."
+                print "  recslides will now exit.\n"
+                sys.exit()
+        else:
+            self.pdffilename = sys.argv[1]
+
+        uri = gnomevfs.make_uri_from_shell_arg(self.pdffilename)
 
         self.audiofilename = self.filename + "-audio.wav"
         self.timesfilename = self.filename + '-times.txt'
 
         if (os.path.exists(self.audiofilename) or os.path.exists(self.timesfilename)) == True:
-            print("\nWARNING: there are preexisting files from a previous recording.")
-            print("Files are: " + self.audiofilename + ", " + self.timesfilename + ".")
-            print("If recslides continues, files will be overwritten.")
-            continue_or_delete = raw_input("Do you want to continue? (y/n): ")
+            print "\n  WARNING: there are preexisting files from a previous recording."
+            print "  Files are: " + self.audiofilename + ", " + self.timesfilename + "."
+            print "  If recslides continues, files will be overwritten."
+            continue_or_delete = raw_input("  Do you want to continue? (y/n): ")
             if continue_or_delete == ("y" or "y"):
-                print("Continuing to sound and times recording.\n")
+                print "  Continuing to sound and times recording.\n"
                 pass
             else:
-                print("recslides will exit now.\n")
+                print "  recslides will exit now.\n"
                 sys.exit()
 
         self.document = poppler.document_new_from_file (uri, None)
@@ -93,7 +104,7 @@ class rec_presentation:
         self.clock = self.player.get_clock()
 
         self.source = gst.element_factory_make("alsasrc", "alsa-source")
-#        srccaps = gst.Caps("audio/x-raw-int,rate=16000,channels=1")
+        #~ self.caps = gst.Caps("audio/x-raw-int,rate=16000,channels=1")
 
         self.encoder = gst.element_factory_make("wavenc", "wavenc")
 
