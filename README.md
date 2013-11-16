@@ -67,14 +67,11 @@ It only works on Linux. I’m not saying that it cannot be ported to other platf
 `recslides` records the sound from the microphone and registers each slide transition timing.
 
 1. It’s invoked in the command–line with something like `recslides mypresentation.pdf`.
-
-* To avoid unintended data loss, if there are sound and/or times files already recorded, `recslides` will prompt whether to overwrite them or to quit.
-
-* Extension will be appended when not specified (either `.pdf` or `.PDF`). If file doesn’t exist, `recslides` will quit.
+    * To avoid unintended data loss, if there are sound and/or times files already recorded, `recslides` will prompt whether to overwrite them or to quit.
+    * Extension will be appended when not specified (either `.pdf` or `.PDF`). If the file doesn’t exist, `recslides` will quit.
 
 1. A new window is opened in the middle of the screen, displaying the first slide from presentation.
-
-* If you close the window before the next step (before the presentation goes full screen), previously existing files won’t be modified. This might be important when you realize that the already existing files is the ones you want to keep.
+    * If you close the window before the next step (before the presentation goes full screen), previously existing files won’t be modified. This might be important when you realize that the already existing files are the ones you want to keep.
 
 1. When the mouse is single–clicked for the first time, presentation goes to full screen and sound from microphone starts to be recorded in a sound file (something like `mypresentation-audio.wav`).
 
