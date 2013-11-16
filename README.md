@@ -34,7 +34,7 @@ I -->
 
 ## The Name of the Game
 
-iRaccoonShow stands for “improved RaccoonShow”. [RaccoonShow](https://github.com/jonobacon/racoonshow/) was originally developed by [Jono Baco](http://www.jonobacon.org). I expanded the original script for my personal use.
+iRaccoonShow stands for “improved RaccoonShow”. [RaccoonShow](https://github.com/jonobacon/raccoonshow/) was originally developed by [Jono Baco](http://www.jonobacon.org). I expanded the original script for my personal use.
 
 Actually the expansion was motivated by the development of SuperShow. Sergio Costas provided a more powerful method for Flash generation. But SuperShow was designed with slide show recreation in mind. Here was were the `raccoonshow` script came handy.
 
@@ -142,11 +142,11 @@ Well, I gratefully acknowledge that I stand on the shoulders of many giants:
 
 * Lawrence Lessig gave the original talk at the O’Reilly Open Source Conference in 2002.
 
-* Leonard Lin created the first Flash presentation and posted it [online](http://randomfoo.net/oscon/2002/lessig/). (Originally released under a Creative Commons Attribution–ShareAlike license.)
+* Leonard Lin created the first Flash presentation and posted it [online](http://randomfoo.net/oscon/2002/lessig/). (Originally released under a Creative Commons Attribution–ShareAlike license. ActionScript code kindly reissued under the BSD 3-clause license [here](https://github.com/lhl/free_culture/)].)
 
-* Matthias Kramm develops [SWFTools](http://swftools.org/), a GNU GPL software that makes all the Flash generation.
+* Matthias Kramm develops [SWFTools](http://swftools.org/), a GNU GPLv2+ software that makes all the Flash generation.
 
-* Jono Bacon developed [RaccoonShow](http://www.jonobacon.org/files/raccoonshow-0.6.tgz), the first tool that enabled the recreation from a Flash file  from PDF slides and recorded video. (Released under the GNU GPLv2 license. Abandoned project.)
+* Jono Bacon developed [RaccoonShow](http://www.jonobacon.org/files/raccoonshow-0.6.tgz), the first tool that enabled the recreation from a Flash file  from PDF slides and recorded video. (Released under the GNU GPLv2 license. Abandoned project, but kindly reissued under the GPLv2+ [here](https://github.com/jonobacon/raccoonshow/).)
 
 * Sergio Costas developed [SuperShow](http://www.rastersoft.com/programas/supershow.html), which allows the user to recreate a presentation from a video file and the slides in PDF format. (Released under the GNU GPLv3 license. Abandoned project.)
 
