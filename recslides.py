@@ -36,13 +36,13 @@ class rec_presentation:
         uri = gnomevfs.make_uri_from_shell_arg(sys.argv[1])
 
         self.filename = os.path.splitext(sys.argv[1])[0]
-        
+
         self.audiofilename = self.filename + "-audio.wav"
         self.timesfilename = self.filename + '-times.txt'
 
         if (os.path.exists(self.audiofilename) or os.path.exists(self.timesfilename)) == True:
             print("\nWARNING: there are preexisting files from a previous recording.")
-            print("Filenames are: " + self.audiofilename + ", " + self.timesfilename + ".")
+            print("Files are: " + self.audiofilename + ", " + self.timesfilename + ".")
             print("If recslides continues, files will be overwritten.")
             continue_or_delete = raw_input("Do you want to continue? (y/n): ")
             if continue_or_delete == ("y" or "y"):
@@ -93,7 +93,7 @@ class rec_presentation:
         self.clock = self.player.get_clock()
 
         self.source = gst.element_factory_make("alsasrc", "alsa-source")
-#        srccaps = gst.Caps("audio/x-raw-int,rate=16000,channels=1,depth=16")
+#        srccaps = gst.Caps("audio/x-raw-int,rate=16000,channels=1")
 
         self.encoder = gst.element_factory_make("wavenc", "wavenc")
 
