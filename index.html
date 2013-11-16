@@ -7,38 +7,37 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
+    <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
   <body>
-
-      <header>
-        <h1>iRaccoonShow</h1>
-        <p>improve your presentations</p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/ousia/iRaccoonShow" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/ousia/iRaccoonShow/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/ousia/iRaccoonShow/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/ousia/iRaccoonShow">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/ousia/iRaccoonShow/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/ousia/iRaccoonShow/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
     <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
+
       <section>
+        <div id="title">
+          <h1>iRaccoonShow</h1>
+          <p>improve your presentations</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/ousia">ousia</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
         <h1>
 <a name="iraccoonshow" class="anchor" href="#iraccoonshow"><span class="octicon octicon-link"></span></a>iRaccoonShow</h1>
 
@@ -112,15 +111,22 @@
 <p><code>recslides</code> records the sound from the microphone and registers each slide transition timing.</p>
 
 <ol>
-<li><p>It’s invoked in the command–line with something like <code>recslides mypresentation.pdf</code>.</p></li>
-</ol><ul>
+<li>
+<p>It’s invoked in the command–line with something like <code>recslides mypresentation.pdf</code>.</p>
+
+<ul>
 <li><p>To avoid unintended data loss, if there are sound and/or times files already recorded, <code>recslides</code> will prompt whether to overwrite them or to quit.</p></li>
-<li><p>Extension will be appended when not specified (either <code>.pdf</code> or <code>.PDF</code>). If file doesn’t exist, <code>recslides</code> will quit.</p></li>
-</ul><ol>
-<li><p>A new window is opened in the middle of the screen, displaying the first slide from presentation.</p></li>
-</ol><ul>
-<li><p>If you close the window before the next step (before the presentation goes full screen), previously existing files won’t be modified. This might be important when you realize that the already existing files is the ones you want to keep.</p></li>
-</ul><ol>
+<li><p>Extension will be appended when not specified (either <code>.pdf</code> or <code>.PDF</code>). If the file doesn’t exist, <code>recslides</code> will quit.</p></li>
+</ul>
+</li>
+</ol><ol>
+<li>
+<p>A new window is opened in the middle of the screen, displaying the first slide from presentation.</p>
+
+<ul>
+<li>If you close the window before the next step (before the presentation goes full screen), previously existing files won’t be modified. This might be important when you realize that the already existing files are the ones you want to keep.</li>
+</ul>
+</li>
 <li><p>When the mouse is single–clicked for the first time, presentation goes to full screen and sound from microphone starts to be recorded in a sound file (something like <code>mypresentation-audio.wav</code>).</p></li>
 <li><p>Each time the mouse is clicked, presentation advances to next slide and the transition time is recorded to a text file (named such as <code>mypresentation-times.txt</code>).</p></li>
 <li><p>When the last slide is reached and the mouse is clicked, presentation leaves full screen and audio recording is stopped. It takes 2.5 seconds extra to avoid problems with the Flash generation.</p></li>
@@ -198,10 +204,7 @@
 <li><p>I recreated the original presentation and posted it <a href="http://www.free-culture.tk">online</a>. Thanks to the improvements to SWFTools by Matthias Kramm, the original file was decreased in a 27% smaller size. I couldn’t have done that without the help of Matthias Kramm, Sergio Costas, Chris Pugh, Ricardo Pedroso and Huub Schaeks.</p></li>
 </ul>
       </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/ousia">ousia</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
-      </footer>
+
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
