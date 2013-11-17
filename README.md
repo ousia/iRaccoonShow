@@ -34,7 +34,7 @@ I -->
 
 ## The Name of the Game
 
-iRaccoonShow stands for “improved RaccoonShow”. [RaccoonShow](https://github.com/jonobacon/raccoonshow/) was originally developed by [Jono Baco](http://www.jonobacon.org). I expanded the original script for my personal use.
+iRaccoonShow stands for “improved RaccoonShow”. [RaccoonShow](https://github.com/jonobacon/raccoonshow/) was originally developed by [Jono Bacon](http://www.jonobacon.org). I expanded the original script for my personal use.
 
 Actually the expansion was motivated by the development of SuperShow. Sergio Costas provided a more powerful method for Flash generation. But SuperShow was designed with slide show recreation in mind. Here was were the `raccoonshow` script came handy.
 
@@ -68,7 +68,6 @@ It only works on Linux. I’m not saying that it cannot be ported to other platf
 
 1. It’s invoked in the command–line with something like `recslides mypresentation.pdf`.
     * To avoid unintended data loss, if there are sound and/or times files already recorded, `recslides` will prompt whether to overwrite them or to quit.
-
     * Extension will be appended when not specified (either `.pdf` or `.PDF`). If the file doesn’t exist, `recslides` will quit.
 
 1. A new window is opened in the middle of the screen, displaying the first slide from presentation.
