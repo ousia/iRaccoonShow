@@ -101,7 +101,7 @@ class rec_presentation:
         self.win.show_all()
 
         self.player = gst.Pipeline("player")
-        self.clock = self.player.get_clock()
+        #~ self.clock = self.player.get_clock()
 
         self.source = gst.element_factory_make("alsasrc", "alsa-source")
         #~ self.caps = gst.Caps("audio/x-raw-int,rate=16000,channels=1")
