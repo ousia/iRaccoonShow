@@ -176,7 +176,7 @@ class rec_presentation:
                     self.file_times.close()
                     self.win.unfullscreen()
                     #~ self.win.resize(1,1)
-                    time.sleep(2.5) # add 2.5 sec to avoid problems with iRaccoonShow
+                    time.sleep(0.5) # add half a second to avoid problems with iRaccoonShow
                     self.player.send_event(gst.event_new_eos())
                     self.current_page =+ 1
 
