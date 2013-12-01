@@ -33,6 +33,11 @@ import gst
 class rec_presentation:
     def __init__(self):
 
+        if(len(sys.argv) < 2):
+            print "  recslides" + ". Written by Pablo Rodríguez."
+            print "  Usage: recslides mypresentation.pdf"
+            sys.exit(2)
+
         self.filename = os.path.splitext(sys.argv[1])[0]
 
         if os.path.splitext(sys.argv[1])[1] != (".pdf" or ".PDF"):
@@ -205,11 +210,6 @@ class rec_presentation:
         cr.rectangle(0, 0, self.page_width, self.page_height)
         cr.fill()
         self.page_selector.render(cr)
-
-    def usage():
-        print "\nrecslides-" + version + ".\nWritten by Pablo Rodríguez.\n"
-        print "Usage: recslides mypresentation.pdf"
-        sys.exit(2)
 
     def gtk_main_quit(self, widget, event):
         gtk.main_quit()
