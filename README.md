@@ -147,6 +147,6 @@ Well, I gratefully acknowledge that I stand on the shoulders of many giants:
 
 * Jono Bacon developed [RaccoonShow](http://www.jonobacon.org/files/raccoonshow-0.6.tgz), the first tool that enabled the recreation from a Flash file  from PDF slides and recorded video. (Released under the GNU GPLv2 license. Abandoned project, but kindly reissued under the GNU GPLv2+ license [here](https://github.com/jonobacon/raccoonshow/).)
 
-* Sergio Costas developed [SuperShow](http://www.rastersoft.com/programas/supershow.html), which allows the user to recreate a presentation from a video file and the slides in PDF format. (Released under the GNU GPLv3 license. Abandoned project.)
+* Sergio Costas developed [SuperShow](http://www.rastersoft.com/programas/supershow.html), which allows the user to recreate a presentation from a video file and the slides in PDF format. (Released under the GNU GPLv3 license. Abandoned project, but Sergio was kind enough to relicense `script.base` under the GNU GPLv3+ version with an exception [[here]](https://github.com/rastersoft/supershow).)
 
 * I recreated the original presentation and posted it [online](http://www.free-culture.tk). Thanks to the improvements to SWFTools by Matthias Kramm, the original file was decreased in a 27% smaller size. I couldn’t have done that without the help of Matthias Kramm, Sergio Costas, Chris Pugh, Ricardo Pedroso and Huub Schaeks.
