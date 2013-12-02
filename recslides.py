@@ -109,15 +109,17 @@ class rec_presentation:
         #~ self.clock = self.player.get_clock()
 
         self.source = gst.element_factory_make("alsasrc", "alsa-source")
-        #~ self.caps = gst.Caps("audio/x-raw-int,rate=16000,channels=1")
+        self.caps = gst.Caps("audio/x-raw-int,rate=16000,channels=1")
+        self.filter = gst.element_factory_make("capsfilter", "filter")
+        self.filter.set_property("caps", self.caps)
 
         self.encoder = gst.element_factory_make("wavenc", "wavenc")
 
         self.fileout = gst.element_factory_make("filesink", "sink")
         self.fileout.set_property("location", self.audiofilename )
 
-        self.player.add(self.source, self.encoder, self.fileout)
-        gst.element_link_many(self.source, self.encoder, self.fileout)
+        self.player.add(self.source, self.filter, self.encoder, self.fileout)
+        gst.element_link_many(self.source, self.filter, self.encoder, self.fileout)
 
         bus = self.player.get_bus()
         bus.add_signal_watch()
