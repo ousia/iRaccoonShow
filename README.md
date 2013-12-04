@@ -89,7 +89,7 @@ With `recslides`, you obtain both the recorded sound and transition times from e
 
 ### `supershow-generator`
 
-`supershow-generator` should be cleared before it can be released to the public ([read the issue](https://github.com/ousia/iraccoonshow/issues/1)).
+`supershow-generator` generates both the Flash presentation and a loader from PDF slides, the recorded sound and the .
 
 ## Bugs
 
