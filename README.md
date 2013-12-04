@@ -111,6 +111,7 @@ With `recslides`, you obtain both the recorded sound and transition times from e
     <param name="allowfullscreen" value="true"/>
 </object>
 ```
+    <!--- -->
     * The presentation could be embedded also in the HTML page, but I really discourage this, because the page will have to load a huge file—the presentation itself—to be fully loaded.
     * The loading path for the presentation in the loader is relative. There is a new way to create absolute paths in the loader.
 
