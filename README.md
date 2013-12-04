@@ -127,8 +127,6 @@ Any help is appreciated.
 
     lame -s 16 -m m -b 32 presentation-audio.wav presentation-audio.mp3
 
-<!-- If you know what you are doing, one could even set `-s 8`. But here you are on your own. -->
-
 ## Compatibility Issues
 
 I think there are two main areas in with compatibility issues might arise: iRaccoonShow as the tool and Flash as the output format.
