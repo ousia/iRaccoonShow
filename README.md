@@ -20,7 +20,7 @@ There are two main tools in iRaccoonShow:
 
 * `recslides` records the sound to a file and writes the slide transitions to a text file, while displaying the slides at full screen.
 
-* `iraccoonshow` generates the final Flash presentation and loader from the PDF file, the sound recording and the time transitions.
+* `supershow-generator` generates the final Flash presentation and loader from the PDF file, the sound recording and the time transitions.
 
 ## Warning
 
@@ -36,15 +36,15 @@ I -->
 
 iRaccoonShow stands for “improved RaccoonShow”. [RaccoonShow](https://github.com/jonobacon/raccoonshow/) was originally developed by [Jono Bacon](http://www.jonobacon.org). I expanded the original script for my personal use.
 
-Actually the expansion was motivated by the development of SuperShow. Sergio Costas provided a more powerful method for Flash generation. But SuperShow was designed with slide show recreation in mind. Here was were the `raccoonshow` script came handy.
+Actually the expansion was motivated by the development of SuperShow. Sergio Costas provided a more powerful method for Flash generation. But SuperShow was designed with slide show recreation in mind. Here was were the original `raccoonshow` script came handy. iRaccoonShow names the whole project.
 
-iRaccoonShow stands for the whole project. The `raccoonshow` script—the same way as its `iraccoonshow` development—focused only on the Flash generation. It required already recorded sound and slide transition times. Depending on the presentation style, writing this time line could be crazy.
+The `raccoonshow` script—the same way as its `supershow-generator` development—focused only on the Flash generation. It required already recorded sound and slide transition times. Depending on the presentation style, writing this time line could be crazy.
 
 So, I developed for my own use a script that recorded both sound and slides transition times when giving the presentation. [With giving the presentation, I don’t mean the public speaking; sitting in front of the computer does the work as well.] `recslides` is extremely simple, but it does the job.
 
 Both scripts are part of iRaccoonShow. They work for me. And I thought they might be useful for others. If not as running software, as an inspiration to develop similar software.
 
-By the way, having been developed in a Unix environment, lowercase and uppercase letters give different names. iRaccoonShow is used to design the whole project and `iraccoonshow` to invoke the script under this name. Just in case it helps, `recslides` is part of iRaccoonShow, but it cannot be part of `iraccoonshow`.
+`supershow-generator` is named after SuperShow. The `swfc` script used to generate the Flash presentation is a derivative version of the script `script.base` included with SuperShow.
 
 ## Requirements
 
@@ -66,16 +66,16 @@ It only works on Linux. I’m not saying that it cannot be ported to other platf
 
 `recslides` records the sound from the microphone and registers each slide transition timing.
 
-1. It’s invoked in the command–line with something like `recslides mypresentation.pdf`.
+1. It’s invoked in the command–line with something like `recslides presentation.pdf`.
     * To avoid unintended data loss, if there are sound and/or times files already recorded, `recslides` will prompt whether to overwrite them or to quit.
     * Extension will be appended when not specified (either `.pdf` or `.PDF`). If the file doesn’t exist, `recslides` will quit.
 
 1. A new window is opened in the middle of the screen, displaying the first slide from presentation.
     * If you close the window before the next step (before the presentation goes full screen), previously existing files won’t be modified. This might be important when you realize that the already existing files are the ones you want to keep.
 
-1. When the mouse is single–clicked for the first time, presentation goes to full screen and sound from microphone starts to be recorded in a sound file (something like `mypresentation-audio.wav`).
+1. When the mouse is single–clicked for the first time, presentation goes to full screen and sound from microphone starts to be recorded in a sound file (something like `presentation-audio.wav`).
 
-1. Each time the mouse is clicked, presentation advances to next slide and the transition time is recorded to a text file (named such as `mypresentation-times.txt`).
+1. Each time the mouse is clicked, presentation advances to next slide and the transition time is recorded to a text file (named such as `presentation-times.txt`).
 
 1. When the last slide is reached and the mouse is clicked, presentation leaves full screen and audio recording is stopped. It takes 2.5 seconds extra to avoid problems with the Flash generation.
 
@@ -87,19 +87,21 @@ With `recslides`, you obtain both the recorded sound and transition times from e
 
 <!--- this is so simple stupid that it just works -->
 
-### `ìraccoonshow`
+### `supershow-generator`
 
-`ìraccoonshow` should be cleared before it can be released to the public ([read the issue](https://github.com/ousia/iRaccoonShow/issues/1)).
+`supershow-generator` should be cleared before it can be released to the public ([read the issue](https://github.com/ousia/iraccoonshow/issues/1)).
 
 ## Bugs
+
+If you find a bug using iRaccoonShow, please [report it](https://github.com/ousia/iRaccoonShow/issues/new). I cannot promise I’ll (be able to) fix it.
 
 Of course, this simple piece of software has bugs. I cannot code, so you can [report issues](https://github.com/ousia/iRaccoonShow/issues). But if you can contribute code, issues will be fixed earlier.
 
 Any help is appreciated.
 
-`swfc` has a bug with latest `lame` version. Until this is fixed in SWFTools, the workaround is to provide the .mp3 file to `iraccoonshow`. One needs to invoke `lame` directly such as in:
+`swfc` has a bug with latest `lame` version. Until this is fixed in [SWFTools](http://www.swftools.org/), the workaround is to provide the .mp3 file to `supershow-generator`. One needs to invoke `lame` directly such as in:
 
-    lame -s 16 -m m -b 32 mypresentation-audio.wav mypresentation-audio.mp3
+    lame -s 16 -m m -b 32 presentation-audio.wav presentation-audio.mp3
 
 <!-- If you know what you are doing, one could even set `-s 8`. But here you are on your own. -->
 
@@ -113,7 +115,7 @@ Porting iRaccoonShow to Windows and MacOSX isn’t impossible, but this is beyon
 
 My guess is that it may be easier to write these tools with native libraries for those platforms. At least, the libraries for PDF display and audio recording. But this is only a(n educated?) guess.
 
-SWFTools works out–of–the box in Windows. And it may be installed in MacOSX (using [MacPorts](https://www.macports.org/install.php) or even [Homebrew](http://brew.sh/) [the latter seems harder to install]).
+[SWFTools](http://www.swftools.org/) works out–of–the box in Windows. And it may be installed in MacOSX (using [MacPorts](https://www.macports.org/install.php) or even [Homebrew](http://brew.sh/) [the latter seems harder to install]).
 
 I run Linux on my machine. So, even if I had something designed for Windows or MacOSX, I wouldn’t be able to check it on these platforms.
 
@@ -143,10 +145,10 @@ Well, I gratefully acknowledge that I stand on the shoulders of many giants:
 
 * Leonard Lin created the first Flash presentation and posted it [online](http://randomfoo.net/oscon/2002/lessig/). (Originally released under a Creative Commons Attribution–ShareAlike license. ActionScript code kindly reissued under the BSD 3-clause license [here](https://github.com/lhl/free_culture/).)
 
-* Matthias Kramm develops [SWFTools](http://swftools.org/), a GNU GPLv2+ licensed software that makes all the Flash generation.
+* Matthias Kramm develops [SWFTools](http://www.swftools.org/), a GNU GPLv2+ licensed software that makes all the Flash generation.
 
 * Jono Bacon developed [RaccoonShow](http://www.jonobacon.org/files/raccoonshow-0.6.tgz), the first tool that enabled the recreation from a Flash file  from PDF slides and recorded video. (Released under the GNU GPLv2 license. Abandoned project, but kindly reissued under the GNU GPLv2+ license [here](https://github.com/jonobacon/raccoonshow/).)
 
 * Sergio Costas developed [SuperShow](http://www.rastersoft.com/programas/supershow.html), which allows the user to recreate a presentation from a video file and the slides in PDF format. (Released under the GNU GPLv3 license. Abandoned project, but Sergio was kind enough to relicense `script.base` under the GNU GPLv3+ license with an exception [[here]](https://github.com/rastersoft/supershow).)
 
-* I recreated the original presentation and posted it [online](http://www.free-culture.tk). Thanks to the improvements to SWFTools by Matthias Kramm, the original file was decreased in a 27% smaller size. I couldn’t have done that without the help of Matthias Kramm, Sergio Costas, Chris Pugh, Ricardo Pedroso and Huub Schaeks.
+* I recreated the original presentation and posted it [online](http://www.free-culture.tk). Thanks to the improvements to [SWFTools](http://www.swftools.org/) by Matthias Kramm, the original file was decreased in a 27% smaller size. I couldn’t have done that without the help of Matthias Kramm, Sergio Costas, Chris Pugh, Ricardo Pedroso and Huub Schaeks.
