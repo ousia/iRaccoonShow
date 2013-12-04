@@ -44,7 +44,7 @@ So, I developed for my own use a script that recorded both sound and slides tran
 
 Both scripts are part of iRaccoonShow. They work for me. And I thought they might be useful for others. If not as running software, as an inspiration to develop similar software.
 
-`supershow-generator` is named after SuperShow. The `swfc` script used to generate the Flash presentation is a derivative version of the script `script.base` included with SuperShow.
+`supershow-generator` is named after SuperShow. The `swfc` script used to generate the Flash presentation is a derivative version of `script.base` that comes with SuperShow.
 
 ## Requirements
 
