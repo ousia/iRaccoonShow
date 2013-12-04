@@ -135,6 +135,8 @@ Since Flash is a dead project in Linux, there are two other possibilities:
 
 All code published within this repository is released to the public under the GNU General Public License version 3 or any later version.
 
+There are two `swfc` scripts used for Flash generation, either from presentation of the loader—`swfc.basic` and `swfc.loader`. These scripts contain an exception that prevents the GNU GPLv3 being automatically applied to the generated presentation or the loader themselves.
+
 The code comes with no warranty. Use at your own risk.
 
 ## Acknowledgments
