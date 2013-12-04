@@ -100,7 +100,6 @@ With `recslides`, you obtain both the recorded sound and transition times from e
 1. `supershow-generator` creates a Flash presentation file (`presentation-presentation.swf`) and a loader file (`presentation-loader.swf`).
 
 1. The loader can be embedded in the HTML page, using code similar to:
-
 ```
 <object type="application/x-shockwave-flash" data="./presentation-loader.swf">
     <param name="movie" value="./presentation-loader.swf"/>
