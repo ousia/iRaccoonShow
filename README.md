@@ -77,7 +77,7 @@ It only works on Linux. I’m not saying that it cannot be ported to other platf
 
 1. Each time the mouse is clicked, presentation advances to next slide and the transition time is recorded to a text file (named such as `presentation-times.txt`).
 
-1. When the last slide is reached and the mouse is clicked, presentation leaves full screen and audio recording is stopped. It takes 2.5 seconds extra to avoid problems with the Flash generation.
+1. When the last slide is reached and the mouse is clicked, presentation leaves full screen and audio recording is stopped. It takes half a second extra to avoid problems with the Flash generation.
 
 With `recslides`, you obtain both the recorded sound and transition times from each slide in presentation. This means you have two key features:
 
@@ -89,7 +89,30 @@ With `recslides`, you obtain both the recorded sound and transition times from e
 
 ### `supershow-generator`
 
-`supershow-generator` generates both the Flash presentation and a loader from PDF slides, the recorded sound and the .
+`supershow-generator` generates both the Flash presentation and a loader from PDF slides, the recorded sound and the timeline.
+
+1. It’s invoked in the command–line by something like `supershow-generator presentation.pdf`
+    * It needs at least a PDF file as argument. It can append the extension. If only the PDF file is specified, it assumes that sound file and times files are named `presentation-audio.wav` and `presentation-times.txt`. (Yes, as they are named by `recslides`.)
+    * If sound and times files aren’t named according the convention described in the previous paragraph, creating two symbolic links following the naming conventions to the real files will do the work.
+
+1. Options can be appended to the argument, but they need reworking. The only one relevant (and known to work option) is `-k`, that keeps script files and generated slides and cover slides.
+
+1. `supershow-generator` creates a Flash presentation file (`presentation-presentation.swf`) and a loader file (`presentation-loader.swf`).
+
+1. The loader can be embedded in the HTML page, using code similar to:
+
+```
+<object type="application/x-shockwave-flash" data="./presentation-loader.swf">
+    <param name="movie" value="./presentation-loader.swf"/>
+    <param name="play" value="true"/>
+    <param name="loop" value="false"/>
+    <param name="quality" value="high"/>
+    <param name="loop" value="false"/>
+    <param name="allowfullscreen" value="true"/>
+</object>
+```
+    * The presentation could be embedded also in the HTML page, but I really discourage this, because the page will have to load a huge file—the presentation itself—to be fully loaded.
+    * The loading path for the presentation in the loader is relative. There is a new way to create absolute paths in the loader.
 
 ## Bugs
 
