@@ -77,9 +77,14 @@ class Backend:
         elif os.path.exists(sys.argv[1]):
             self.pdffile = sys.argv[1]
 
-        if (os.path.exists(self.filename + "-audio.wav") and os.path.exists(self.filename + '-times.txt')):
+        if os.path.exists(self.filename + "-audio.mp3"):
+            self.audiofile = self.filename + "-audio.mp3"
+        elif os.path.exists(self.filename + "-audio.wav"):
             self.audiofile = self.filename + "-audio.wav"
+
+        if os.path.exists(self.filename + '-times.txt'):
             self.timeline = self.filename + '-times.txt'
+
         self.slidesfile = self.filename + ".swf"
         self.coverslidefile = self.filename + "-first.swf"
         self.scriptfile = self.filename + ".sc"
