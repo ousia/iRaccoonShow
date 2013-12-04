@@ -7,38 +7,37 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
+    <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
   <body>
-
-      <header>
-        <h1>iRaccoonShow</h1>
-        <p>improve your presentations</p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/ousia/iRaccoonShow" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/ousia/iRaccoonShow/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/ousia/iRaccoonShow/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/ousia/iRaccoonShow">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/ousia/iRaccoonShow/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/ousia/iRaccoonShow/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
     <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
+
       <section>
+        <div id="title">
+          <h1>iRaccoonShow</h1>
+          <p>improve your presentations</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/ousia">ousia</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
         <h1>
 <a name="iraccoonshow" class="anchor" href="#iraccoonshow"><span class="octicon octicon-link"></span></a>iRaccoonShow</h1>
 
@@ -129,7 +128,7 @@
 </li>
 <li><p>When the mouse is single–clicked for the first time, presentation goes to full screen and sound from microphone starts to be recorded in a sound file (something like <code>presentation-audio.wav</code>).</p></li>
 <li><p>Each time the mouse is clicked, presentation advances to next slide and the transition time is recorded to a text file (named such as <code>presentation-times.txt</code>).</p></li>
-<li><p>When the last slide is reached and the mouse is clicked, presentation leaves full screen and audio recording is stopped. It takes 2.5 seconds extra to avoid problems with the Flash generation.</p></li>
+<li><p>When the last slide is reached and the mouse is clicked, presentation leaves full screen and audio recording is stopped. It takes half a second extra to avoid problems with the Flash generation.</p></li>
 </ol><p>With <code>recslides</code>, you obtain both the recorded sound and transition times from each slide in presentation. This means you have two key features:</p>
 
 <ul>
@@ -139,9 +138,35 @@
 <a name="supershow-generator" class="anchor" href="#supershow-generator"><span class="octicon octicon-link"></span></a><code>supershow-generator</code>
 </h3>
 
-<p><code>supershow-generator</code> generates both the Flash presentation and a loader from PDF slides, the recorded sound and the .</p>
+<p><code>supershow-generator</code> generates both the Flash presentation and a loader from PDF slides, the recorded sound and the timeline.</p>
 
-<h2>
+<ol>
+<li>
+<p>It’s invoked in the command–line by something like <code>supershow-generator presentation.pdf</code></p>
+
+<ul>
+<li>It needs at least a PDF file as argument. It can append the extension. If only the PDF file is specified, it assumes that sound file and times files are named <code>presentation-audio.wav</code> and <code>presentation-times.txt</code>. (Yes, as they are named by <code>recslides</code>.)</li>
+<li>If sound and times files aren’t named according the convention described in the previous paragraph, creating two symbolic links following the naming conventions to the real files will do the work.</li>
+</ul>
+</li>
+<li><p>Options can be appended to the argument, but they need reworking. The only one relevant (and known to work option) is <code>-k</code>, that keeps script files and generated slides and cover slides.</p></li>
+<li><p><code>supershow-generator</code> creates a Flash presentation file (<code>presentation-presentation.swf</code>) and a loader file (<code>presentation-loader.swf</code>).</p></li>
+<li>
+<p>The loader can be embedded in the HTML page, using code similar to:</p>
+
+<pre><code>&lt;object type="application/x-shockwave-flash" data="./presentation-loader.swf"&gt;
+    &lt;param name="movie" value="./presentation-loader.swf"/&gt;
+    &lt;param name="play" value="true"/&gt;
+    &lt;param name="loop" value="false"/&gt;
+    &lt;param name="quality" value="high"/&gt;
+    &lt;param name="loop" value="false"/&gt;
+    &lt;param name="allowfullscreen" value="true"/&gt;
+&lt;/object&gt;
+</code></pre>
+</li>
+<li><p>The presentation could be embedded also in the HTML page. I really discourage this as a bad idea. The browser will have to load a huge file—the presentation itself—to get the page fully loaded.</p></li>
+<li><p>The loading path for the presentation in the loader is relative. There is a new way to create absolute paths in the loader.</p></li>
+</ol><h2>
 <a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h2>
 
 <p>If you find a bug using iRaccoonShow, please <a href="https://github.com/ousia/iRaccoonShow/issues/new">report it</a>. I cannot promise I’ll (be able to) fix it.</p>
@@ -208,10 +233,7 @@
 <li><p>I recreated the original presentation and posted it <a href="http://www.free-culture.tk">online</a>. Thanks to the improvements to <a href="http://www.swftools.org/">SWFTools</a> by Matthias Kramm, the original file was decreased in a 27% smaller size. I couldn’t have done that without the help of Matthias Kramm, Sergio Costas, Chris Pugh, Ricardo Pedroso and Huub Schaeks.</p></li>
 </ul>
       </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/ousia">ousia</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
-      </footer>
+
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
