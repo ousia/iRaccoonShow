@@ -26,16 +26,18 @@ try:
 except:
     print "python-poppler is not available"
 import cairo
-import pygst
-pygst.require("0.10")
 import gst
+import iRS_settings
 
 class rec_presentation:
     def __init__(self):
 
         if(len(sys.argv) < 2):
-            print "  recslides" + ". Written by Pablo Rodríguez."
-            print "  Usage: recslides mypresentation.pdf"
+            print ""
+            print "  recslides-" + iRS_settings.version + " (http://www.iraccoonshow.tk)"
+            print "  Written by Pablo Rodríguez."
+            print "  Usage: recslides presentation.pdf"
+            print ""
             sys.exit(2)
 
         self.filename = os.path.splitext(sys.argv[1])[0]
