@@ -100,16 +100,16 @@ With `recslides`, you obtain both the recorded sound and transition times from e
 1. `supershow-generator` creates a Flash presentation file (`presentation-presentation.swf`) and a loader file (`presentation-loader.swf`).
 
 1. The loader can be embedded in the HTML page, using code similar to:
-```
-<object type="application/x-shockwave-flash" data="./presentation-loader.swf">
-    <param name="movie" value="./presentation-loader.swf"/>
-    <param name="play" value="true"/>
-    <param name="loop" value="false"/>
-    <param name="quality" value="high"/>
-    <param name="loop" value="false"/>
-    <param name="allowfullscreen" value="true"/>
-</object>
-```
+    ```
+    <object type="application/x-shockwave-flash" data="./presentation-loader.swf">
+        <param name="movie" value="./presentation-loader.swf"/>
+        <param name="play" value="true"/>
+        <param name="loop" value="false"/>
+        <param name="quality" value="high"/>
+        <param name="loop" value="false"/>
+        <param name="allowfullscreen" value="true"/>
+    </object>
+    ```
 
 1. The presentation could be embedded also in the HTML page. I really discourage this as a bad idea. The browser will have to load a huge file—the presentation itself—to get the page fully loaded.
 
