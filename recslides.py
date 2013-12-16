@@ -46,6 +46,10 @@ class rec_presentation:
             self.pdffilename = os.path.splitext(sys.argv[1])[0] + ".pdf"
             if  os.path.exists(self.pdffilename) == False:
                 self.pdffilename = os.path.splitext(sys.argv[1])[0] + ".PDF"
+                if os.path.exists(self.pdffilename) == False:
+                    print "\n  recslides requires a PDF document to work with."
+                    print "  recslides will now exit.\n"
+                    sys.exit()
             elif os.path.exists(self.pdffilename) == False:
                 print "\n  recslides requires a PDF document to work with."
                 print "  recslides will now exit.\n"
