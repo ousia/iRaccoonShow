@@ -21,28 +21,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301, USA or see <http://www.gnu.org/licenses/gpl.html>.
 
-        #~ firstline=fileopen.readline()
-        #~ if firstline!="supershow\n":
-           #~ self.format=supershow
-           #~ fileopen.close()
-        #~ else if:
-
-        #~ string.isdigit()
-
-        #~ def timetosecs(s):
-            #~ hms = s.split(":") # [hh, mm, ss]
-            #~ secs = 0
-            #~ for t in hms:
-            #~ secs = secs * 60 + int(t)
-            #~ return secs
-#~
-        #~ def secstotime(secs):
-            #~ hms = []
-            #~ while secs:
-            #~ hms.append(str(secs % 60))
-            #~ secs = secs // 60
-            #~ return ":".join(hms)
-
 import commands
 import glob
 import sys
@@ -62,14 +40,13 @@ class Backend:
         self.outputfile = ""
         self.frame_rate = ""
         self.format = ""
-        self.timesfile = list()
-        self.installpath = "/usr/share/fonts/ousia-fonts/"
+        self.installpath = os.path.dirname(os.path.realpath(__file__))
 
         self.filename = os.path.splitext(sys.argv[1])[0]
         self.filepath = os.path.dirname(os.path.abspath(sys.argv[1]))
 
         if os.path.splitext(sys.argv[1])[1] == (".swf" or ".SWF"):
-            self.slidesfile = sys.argv[1]
+            self.swffile = sys.argv[1]
         elif os.path.splitext(sys.argv[1])[1] != (".pdf" or ".PDF"):
             self.pdffile = os.path.splitext(sys.argv[1])[0] + ".pdf"
             if os.path.exists(self.pdffile) == False:
@@ -85,7 +62,7 @@ class Backend:
         if os.path.exists(self.filename + '-times.txt'):
             self.timeline = self.filename + '-times.txt'
 
-        self.slidesfile = self.filename + ".swf"
+        self.slidesfile = self.filename + "-slides.swf"
         self.coverslidefile = self.filename + "-first.swf"
         self.scriptfile = self.filename + ".sc"
         self.loaderscript = self.filename + "-loader.sc"
@@ -100,7 +77,6 @@ class Backend:
                 self.filename = self.pdffile[:-4]
             else:
                 self.filename = self.pdffile
-            self.slidesfile = self.filename + ".swf"
             self.scriptfile = self.filename + ".sc"
 
     def getSWFFile(self, setting):
@@ -205,7 +181,7 @@ class Backend:
 
         counter=len(self.times)
 
-        filescript=open("script.tiny","r")
+        filescript=open( self.installpath + "/script.tiny","r")
         filebuffer=filescript.read()
         filescript.close()
 
@@ -275,7 +251,7 @@ class Backend:
     def createLoaderScript(self):
         print "Building the loader... (" + self.loaderscript + ")"
 
-        filescript=open("script.loader","r")
+        filescript=open(self.installpath + "/script.loader","r")
         filebuffer=filescript.read()
         filescript.close()
 
@@ -378,8 +354,6 @@ def usage():
     print "  Usage: supershow-generator presentation [options]"
     print "  \t (presentation must be a PDF or SWF file)"
     print "\t-k, --keep-files\tkeep slides and script files"
-    #~ print "\t-p, --pdf\t\tPDF file with the presentation slides"
-    #~ print "\t-s, --swf\t\tSWF presentation with converted frames"
     print "\t-t, --timeline\t\ta file containing the timeline"
     print "\t-a, --audio\t\tWAV/MP3 file with the recorded audio"
     #~ print "\t-r, --relative-times\ttimeline has relative times (not absolute)"
