@@ -138,7 +138,7 @@ class Backend:
 
     def convertPdf(self):
         if self.swffile:
-            print "Using already converted SWF presentation\t(" + self.swffile + ")"
+            print "Using already converted SWF slides\t(" + self.swffile + ")"
         elif self.pdffile:
             print "Converting slides to Flash...\t(" + self.slidesfile + ")"
             commands.getoutput("pdf2swf -T 8 -s filloverlap -s linksopennewwindow " + self.pdffile + " -o " + self.slidesfile)
@@ -351,8 +351,8 @@ class Backend:
 def usage():
     print "\n  supershow-generator-" + iRS_settings.version + " (http://www.iraccoonshow.tk)"
     print "  Written by Pablo Rodríguez, based on raccoonshow by Jono Bacon."
-    print "  Usage: supershow-generator presentation [options]"
-    print "  \t (presentation must be a PDF or SWF file)"
+    print "  Usage: supershow-generator presentation-slides [options]"
+    print "  \t (Presentation slides must be a PDF or SWF file)"
     print "\t-k, --keep-files\tkeep slides and script files"
     print "\t-t, --timeline\t\ta file containing the timeline"
     print "\t-a, --audio\t\tWAV/MP3 file with the recorded audio"
