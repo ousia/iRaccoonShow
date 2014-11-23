@@ -1,37 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>iRaccoonShow by ousia</title>
+    <meta name="description" content="iRaccoonShow : improve your presentations">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>iRaccoonShow</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">iRaccoonShow</h1>
-        <p class="header">improve your presentations</p>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/ousia/iRaccoonShow/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/ousia/iRaccoonShow/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/ousia/iRaccoonShow">View On GitHub</a></li>
-        </ul>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ousia/iRaccoonShow">View on GitHub</a>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/ousia">ousia</a></p>
+          <h1 id="project_title">iRaccoonShow</h1>
+          <h2 id="project_tagline">improve your presentations</h2>
 
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ousia/iRaccoonShow/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ousia/iRaccoonShow/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-      </header>
-      <section>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>
-<a name="iraccoonshow" class="anchor" href="#iraccoonshow"><span class="octicon octicon-link"></span></a>iRaccoonShow</h1>
+<a id="iraccoonshow" class="anchor" href="#iraccoonshow" aria-hidden="true"><span class="octicon octicon-link"></span></a>iRaccoonShow</h1>
 
 <p>iRaccoonShow enables the creation of presentations that include slides with synchronized sound. One presentation (re)created with iRaccoonShow is <a href="http://www.free-culture.tk">http://www.free-culture.tk</a>.</p>
 
@@ -40,31 +41,35 @@
 <ul>
 <li><p>File size: each slide image is include only once in the final presentation.</p></li>
 <li><p>Image quality: vector images allow higher resolutions without higher file sizes.</p></li>
-</ul><p>Digital video requires to include the same image many times per second. This is a huge waste of unrequired size. And when the number of images per second is decreased, audio can loose sync with images.</p>
+</ul>
+
+<p>Digital video requires to include the same image many times per second. This is a huge waste of unrequired size. And when the number of images per second is decreased, audio can loose sync with images.</p>
 
 <p>But even if the slide could be included only once for its full display time, its image would have a given resolution. Image size in video cannot increased without decreasing its definition. Maybe a higher resolution could be set in some cases, but the resulting file would be higher.</p>
 
 <p>iRaccoonShow includes each image only once in the presentation, preserving each resolution–independent image as such.</p>
 
 <h2>
-<a name="tools" class="anchor" href="#tools"><span class="octicon octicon-link"></span></a>Tools</h2>
+<a id="tools" class="anchor" href="#tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tools</h2>
 
 <p>There are two main tools in iRaccoonShow:</p>
 
 <ul>
 <li><p><code>recslides</code> records the sound to a file and writes the slide transitions to a text file, while displaying the slides at full screen.</p></li>
 <li><p><code>supershow-generator</code> generates the final Flash presentation and loader from the PDF file, the sound recording and the time transitions.</p></li>
-</ul><h2>
-<a name="warning" class="anchor" href="#warning"><span class="octicon octicon-link"></span></a>Warning</h2>
+</ul>
 
-<p>Just in case you wonder and before further reading: I cannot code. My background isn’t technical and I have never learned programming. Sorry, but I must confess it’s too complex for a simple mind such as mine <img class="emoji" title=":smirk:" alt=":smirk:" src="https://github.global.ssl.fastly.net/images/icons/emoji/smirk.png" height="20" width="20" align="absmiddle">.</p>
+<h2>
+<a id="warning" class="anchor" href="#warning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Warning</h2>
+
+<p>Just in case you wonder and before further reading: I cannot code. My background isn’t technical and I have never learned programming. Sorry, but I must confess it’s too complex for a simple mind such as mine <img class="emoji" title=":smirk:" alt=":smirk:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60f.png" height="20" width="20" align="absmiddle">.</p>
 
 <p>What I have done here could be considered trial–and–error writing. It works for me, but it is full of glitches. I’m aware of the limits of iRaccoonShow, but I cannot overcome them.</p>
 
 
 
 <h2>
-<a name="the-name-of-the-game" class="anchor" href="#the-name-of-the-game"><span class="octicon octicon-link"></span></a>The Name of the Game</h2>
+<a id="the-name-of-the-game" class="anchor" href="#the-name-of-the-game" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Name of the Game</h2>
 
 <p>iRaccoonShow stands for “improved RaccoonShow”. <a href="https://github.com/jonobacon/raccoonshow/">RaccoonShow</a> was originally developed by <a href="http://www.jonobacon.org">Jono Bacon</a>. I expanded the original script for my personal use.</p>
 
@@ -79,7 +84,7 @@
 <p><code>supershow-generator</code> is named after SuperShow. The <code>swfc</code> script used to generate the Flash presentation is a derivative version of <code>script.base</code> that comes with SuperShow.</p>
 
 <h2>
-<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <p>iRaccoonShow has the following dependencies:</p>
 
@@ -89,15 +94,17 @@
 <li>Poppler: PDF display.</li>
 <li>GStreamer, PyGST: audio recording.</li>
 <li>SWFTools: generation of Flash files.</li>
-</ul><p>iRaccoonShow is a command–line software. In <code>recslides</code>, command–line is only used to invoke the tool (after that, there is no command–line <img class="emoji" title=":wink:" alt=":wink:" src="https://github.global.ssl.fastly.net/images/icons/emoji/wink.png" height="20" width="20" align="absmiddle">).</p>
+</ul>
+
+<p>iRaccoonShow is a command–line software. In <code>recslides</code>, command–line is only used to invoke the tool (after that, there is no command–line <img class="emoji" title=":wink:" alt=":wink:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png" height="20" width="20" align="absmiddle">).</p>
 
 <p>It only works on Linux. I’m not saying that it cannot be ported to other platforms: this is something still to be done.</p>
 
 <h2>
-<a name="how-it-works" class="anchor" href="#how-it-works"><span class="octicon octicon-link"></span></a>How It Works</h2>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How It Works</h2>
 
 <h3>
-<a name="recslides" class="anchor" href="#recslides"><span class="octicon octicon-link"></span></a><code>recslides</code>
+<a id="recslides" class="anchor" href="#recslides" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>recslides</code>
 </h3>
 
 <p><code>recslides</code> records the sound from the microphone and registers each slide transition timing.</p>
@@ -121,13 +128,19 @@
 <li><p>When the mouse is single–clicked for the first time, presentation goes to full screen and sound from microphone starts to be recorded in a sound file (something like <code>presentation-audio.wav</code>).</p></li>
 <li><p>Each time the mouse is clicked, presentation advances to next slide and the transition time is recorded to a text file (named such as <code>presentation-times.txt</code>).</p></li>
 <li><p>When the last slide is reached and the mouse is clicked, presentation leaves full screen and audio recording is stopped. It takes half a second extra to avoid problems with the Flash generation.</p></li>
-</ol><p>With <code>recslides</code>, you obtain both the recorded sound and transition times from each slide in presentation. This means you have two key features:</p>
+</ol>
+
+<p>With <code>recslides</code>, you obtain both the recorded sound and transition times from each slide in presentation. This means you have two key features:</p>
 
 <ul>
 <li><p>Having the transition times and sound, you can generate the final presentation in the format you like (being Flash only one of the possible ones <a href="#flash">more on this</a>).</p></li>
 <li><p>This is the best (or maybe the only possible) way to get accurate transition times. Times are recorded when giving the presentation (not necessarily in public), not recreated by calculating how long each slide took.</p></li>
-</ul><h3>
-<a name="supershow-generator" class="anchor" href="#supershow-generator"><span class="octicon octicon-link"></span></a><code>supershow-generator</code>
+</ul>
+
+
+
+<h3>
+<a id="supershow-generator" class="anchor" href="#supershow-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>supershow-generator</code>
 </h3>
 
 <p><code>supershow-generator</code> generates both the Flash presentation and a loader from PDF slides, the recorded sound and the timeline.</p>
@@ -158,8 +171,10 @@
 </li>
 <li><p>The presentation could be embedded also in the HTML page. I really discourage this as a bad idea. The browser will have to load a huge file—the presentation itself—to get the page fully loaded.</p></li>
 <li><p>The loading path for the presentation in the loader is relative. There is a new way to create absolute paths in the loader.</p></li>
-</ol><h2>
-<a name="bugs" class="anchor" href="#bugs"><span class="octicon octicon-link"></span></a>Bugs</h2>
+</ol>
+
+<h2>
+<a id="bugs" class="anchor" href="#bugs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bugs</h2>
 
 <p>If you find a bug using iRaccoonShow, please <a href="https://github.com/ousia/iRaccoonShow/issues/new">report it</a>. I cannot promise I’ll (be able to) fix it.</p>
 
@@ -173,12 +188,12 @@
 </code></pre>
 
 <h2>
-<a name="compatibility-issues" class="anchor" href="#compatibility-issues"><span class="octicon octicon-link"></span></a>Compatibility Issues</h2>
+<a id="compatibility-issues" class="anchor" href="#compatibility-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compatibility Issues</h2>
 
 <p>I think there are two main areas in with compatibility issues might arise: iRaccoonShow as the tool and Flash as the output format.</p>
 
 <h3>
-<a name="iraccoonshow-1" class="anchor" href="#iraccoonshow-1"><span class="octicon octicon-link"></span></a>iRaccoonShow</h3>
+<a id="iraccoonshow-1" class="anchor" href="#iraccoonshow-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>iRaccoonShow</h3>
 
 <p>Porting iRaccoonShow to Windows and MacOSX isn’t impossible, but this is beyond my (non–existent) technical skills.</p>
 
@@ -189,7 +204,7 @@
 <p>I run Linux on my machine. So, even if I had something designed for Windows or MacOSX, I wouldn’t be able to check it on these platforms.</p>
 
 <h3>
-<a name="flash" class="anchor" href="#flash"><span class="octicon octicon-link"></span></a>Flash</h3>
+<a id="flash" class="anchor" href="#flash" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flash</h3>
 
 <p>Flash is available for Windows, MacOSX and Linux. iPad isn’t supported, since Apple doesn’t want to have it supported.</p>
 
@@ -200,8 +215,10 @@
 <ul>
 <li><p>Generate a movie with variable frame–rate. Image quality with the <a href="http://www.vp9videocodec.com">VP9 codec</a> seems to be the best available. And audio can be much compressed with a higher quality using the <a href="http://www.opus-codec.org/">Opus codec</a>.</p></li>
 <li><p>PDF can be a good format for vector–based presentations. It only requires some multimedia JavaScript and a PDF reader implemented by Adobe.</p></li>
-</ul><h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>All code published within this repository is released to the public under the GNU General Public License version 3 or any later version.</p>
 
@@ -210,7 +227,7 @@
 <p>The code comes with no warranty. Use at your own risk.</p>
 
 <h2>
-<a name="acknowledgments" class="anchor" href="#acknowledgments"><span class="octicon octicon-link"></span></a>Acknowledgments</h2>
+<a id="acknowledgments" class="anchor" href="#acknowledgments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Acknowledgments</h2>
 
 <p>Well, I gratefully acknowledge that I stand on the shoulders of many giants:</p>
 
@@ -223,11 +240,17 @@
 <li><p>I recreated the original presentation and posted it <a href="http://www.free-culture.tk">online</a>. Thanks to the improvements to <a href="http://www.swftools.org/">SWFTools</a> by Matthias Kramm, the original file was decreased in a 27% smaller size. I couldn’t have done that without the help of Matthias Kramm, Sergio Costas, Chris Pugh, Ricardo Pedroso and Huub Schaeks.</p></li>
 </ul>
       </section>
-      <footer>
-        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">iRaccoonShow maintained by <a href="https://github.com/ousia">ousia</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+
+    
+
   </body>
 </html>
