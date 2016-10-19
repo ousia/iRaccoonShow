@@ -56,7 +56,6 @@ class rec_presentation:
         else:
             self.pdffilename = sys.argv[1]
 
-        #~ uri = gnomevfs.make_uri_from_shell_arg(self.pdffilename)
         uri = "file://" + os.path.abspath(self.pdffilename)
 
         self.audiofilename = self.filename + "-audio.wav"
