@@ -19,7 +19,6 @@
 #  MA 02110-1301, USA or see <http://www.gnu.org/licenses/gpl.html>.
 
 import sys, os, time
-import gnomevfs
 import gtk
 try:
     import poppler
@@ -57,7 +56,8 @@ class rec_presentation:
         else:
             self.pdffilename = sys.argv[1]
 
-        uri = gnomevfs.make_uri_from_shell_arg(self.pdffilename)
+        #~ uri = gnomevfs.make_uri_from_shell_arg(self.pdffilename)
+        uri = "file://" + os.path.abspath(self.pdffilename)
 
         self.audiofilename = self.filename + "-audio.wav"
         self.timesfilename = self.filename + '-times.txt'
@@ -183,6 +183,7 @@ class rec_presentation:
                     self.area.set_size_request(int(self.width),int(self.height))
                     self.area.queue_draw()
                 elif self.current_page + 1 == self.n_pages:
+                    self.starting_time = self.start[0]
                     right_now = time.time()
                     time_interval = str(int((right_now - self.starting_time)*1000))
                     self.file_times.write(time_interval + "\n")
