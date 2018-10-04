@@ -156,7 +156,7 @@
 
     function check_time() {
         if (mode==1) {
-            if (snd.position+600>sound_length) {
+            if (snd.position+220>sound_length) {
                 snd.stop();
                 mode=2;
                 if(Stage.displayState == "fullScreen"){
