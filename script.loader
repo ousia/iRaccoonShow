@@ -25,7 +25,7 @@
 # the document might be covered by the GNU General Public License.
 
 .flash filename="{filename:loader}" version=8 fps=12
-.font roman "{filename:installpath}iRaccoonShowBold.otf" glyphs=" %()KB0123456789/:,.CPDNuk[]resntiocanbld!"
+.font roman "{filename:installpath}/iRaccoonShowBold.otf" glyphs=" %()KB0123456789/:,.CPDNuk[]resntiocanbld!"
 .edittext newloader font=roman color=#ffff00 size=30% width=350 height=30 border=none align="center" noselect variable=load_text
 .box placeholder width={presentation:width} height={presentation:height}
 .box fsarea fill=#ffffff00 color=#ffffff00 width={presentation:width} height={presentation:height}
